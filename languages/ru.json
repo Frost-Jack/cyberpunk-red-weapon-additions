@@ -1,0 +1,50 @@
+{
+  "CPR-WA.settings.sectionHeader": "Дополнения оружия",
+  "CPR-WA.settings.autofireCostField": "Расход патронов: Автоогонь / Подавление",
+
+  "CPR-WA.settings.defaultAutofireCost.name": "Расход патронов автоогня по умолчанию",
+  "CPR-WA.settings.defaultAutofireCost.hint": "Сколько патронов тратит очередь автоогня или подавления, если у оружия не задано своё значение. По правилам RED — 10.",
+  "CPR-WA.settings.aoeSize.name": "Размер поражения (клетки)",
+  "CPR-WA.settings.aoeSize.hint": "Длина стороны квадратной области поражения (в клетках сетки) для гранат и ракет. В RED по умолчанию 3 (область 3×3).",
+  "CPR-WA.settings.aoeAutoTarget.name": "Авто-выбор целей в области",
+  "CPR-WA.settings.aoeAutoTarget.hint": "Автоматически назначать целью каждый токен внутри размещённой области поражения.",
+  "CPR-WA.settings.diwakoAoeDv.name": "Проверка DV области (diwako)",
+  "CPR-WA.settings.diwakoAoeDv.hint": "Требуется diwako-cpred-additions. При выстреле оружием с областью поражения рассчитывается дальнобойный DV на расстоянии от стрелка до центра области и в чат выводится результат попадания/промаха.",
+  "CPR-WA.settings.autoLinkInjuries.name": "Авто-ссылки на критические повреждения",
+  "CPR-WA.settings.autoLinkInjuries.hint": "Превращать названия критических повреждений в описаниях предметов в кликабельные ссылки на компендиум и показывать их на картах критического урона.",
+  "CPR-WA.settings.burningMild.name": "Урон Лёгкого горения",
+  "CPR-WA.settings.burningStrong.name": "Урон Сильного горения",
+  "CPR-WA.settings.burningDeadly.name": "Урон Смертельного горения",
+
+  "CPR-WA.burst.short": "Очередь",
+  "CPR-WA.burst.multiplierField": "Множитель очереди (пуль/очередь)",
+  "CPR-WA.burst.formulaField": "Формула урона очереди",
+  "CPR-WA.burst.ammoTypeField": "Тип боеприпаса для очереди",
+  "CPR-WA.burst.ammoTypeNone": "— (использовать заряженный) —",
+
+  "CPR-WA.mixedMag.toggleField": "Смешанный магазин",
+  "CPR-WA.mixedMag.title": "Зарядка магазина",
+  "CPR-WA.mixedMag.confirm": "Подтвердить",
+  "CPR-WA.mixedMag.cancel": "Отмена",
+  "CPR-WA.mixedMag.autofill": "Заполнить",
+  "CPR-WA.mixedMag.magazineLabel": "Магазин",
+  "CPR-WA.mixedMag.inventoryLabel": "Боеприпасы",
+  "CPR-WA.mixedMag.emptySlot": "пусто",
+  "CPR-WA.mixedMag.dragHint": "Перетаскивайте патроны в слоты. Слот 1 стреляет первым. Порядок можно менять; подтвердите для зарядки.",
+  "CPR-WA.mixedMag.notAmmo": "Этот предмет не является боеприпасом.",
+  "CPR-WA.mixedMag.wrongVariety": "Это оружие не может использовать этот вид боеприпаса.",
+  "CPR-WA.mixedMag.noAmmo": "Нет подходящих боеприпасов в инвентаре.",
+  "CPR-WA.mixedMag.outOfStock": "Больше нет патронов «{name}» для зарядки.",
+  "CPR-WA.mixedMag.unloaded": "Не заряжено",
+  "CPR-WA.mixedMag.next": "Далее",
+
+  "CPR-WA.injury.applied": "«{name}» применено к {target}.",
+
+  "CPR-WA.aoe.dvHit": "<b>{attacker} <span class=\"fg-green\">попадает по области</span></b> (DV: {dv} на {dist}м, +{diff})! Бросайте урон по целям в области!",
+  "CPR-WA.aoe.dvMiss": "<b>{attacker} <span class=\"fg-red\">промахивается по области</span></b> на {diff} (DV области: {dv} на {dist}м)!",
+
+  "CPR-WA.burning.mild": "Лёгкое горение",
+  "CPR-WA.burning.strong": "Сильное горение",
+  "CPR-WA.burning.deadly": "Смертельное горение",
+  "CPR-WA.burning.takes": "получает {amount} урона от горения (игнорируя броню)."
+}

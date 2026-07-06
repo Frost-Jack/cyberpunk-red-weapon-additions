@@ -1,3 +1,50 @@
 {
-    "MODULE.hello": "hello"
+  "CPR-WA.settings.sectionHeader": "Weapon Additions",
+  "CPR-WA.settings.autofireCostField": "Autofire / Suppressive Ammo Cost",
+
+  "CPR-WA.settings.defaultAutofireCost.name": "Default Autofire Ammo Cost",
+  "CPR-WA.settings.defaultAutofireCost.hint": "Rounds consumed by an autofire or suppressive burst when a weapon does not override it. RED default is 10.",
+  "CPR-WA.settings.aoeSize.name": "Blast Size (tiles)",
+  "CPR-WA.settings.aoeSize.hint": "Side length, in grid tiles, of the square blast area placed for grenades and rockets. RED default is 3 (a 3x3 area).",
+  "CPR-WA.settings.aoeAutoTarget.name": "Auto-target Tokens in Blast",
+  "CPR-WA.settings.aoeAutoTarget.hint": "Automatically set every token inside the placed blast template as your target.",
+  "CPR-WA.settings.diwakoAoeDv.name": "Area DV Check (diwako)",
+  "CPR-WA.settings.diwakoAoeDv.hint": "Requires diwako-cpred-additions. When an area weapon is fired, resolve the ranged DV at the distance from the attacker to the blast centre and post a hit/miss result to chat.",
+  "CPR-WA.settings.autoLinkInjuries.name": "Auto-link Critical Injuries",
+  "CPR-WA.settings.autoLinkInjuries.hint": "Turn critical-injury names found in item descriptions into clickable compendium links, and reference them on critical damage cards.",
+  "CPR-WA.settings.burningMild.name": "Mild Burning damage",
+  "CPR-WA.settings.burningStrong.name": "Strong Burning damage",
+  "CPR-WA.settings.burningDeadly.name": "Deadly Burning damage",
+
+  "CPR-WA.burst.short": "Burst",
+  "CPR-WA.burst.multiplierField": "Burst Multiplier (rounds/burst)",
+  "CPR-WA.burst.formulaField": "Burst Damage Formula",
+  "CPR-WA.burst.ammoTypeField": "Burst Substitute Ammo Type",
+  "CPR-WA.burst.ammoTypeNone": "— (use loaded round) —",
+
+  "CPR-WA.mixedMag.toggleField": "Mixed-type Magazine",
+  "CPR-WA.mixedMag.title": "Load Magazine",
+  "CPR-WA.mixedMag.confirm": "Confirm",
+  "CPR-WA.mixedMag.cancel": "Cancel",
+  "CPR-WA.mixedMag.autofill": "Auto-fill",
+  "CPR-WA.mixedMag.magazineLabel": "Magazine",
+  "CPR-WA.mixedMag.inventoryLabel": "Ammunition",
+  "CPR-WA.mixedMag.emptySlot": "empty",
+  "CPR-WA.mixedMag.dragHint": "Drag ammo into slots. Slot 1 fires first. Rearrange freely; confirm to load.",
+  "CPR-WA.mixedMag.notAmmo": "That item is not ammunition.",
+  "CPR-WA.mixedMag.wrongVariety": "This weapon cannot chamber that ammo variety.",
+  "CPR-WA.mixedMag.noAmmo": "No compatible ammunition in inventory.",
+  "CPR-WA.mixedMag.outOfStock": "No more {name} left to load.",
+  "CPR-WA.mixedMag.unloaded": "Unloaded",
+  "CPR-WA.mixedMag.next": "Next",
+
+  "CPR-WA.injury.applied": "Applied {name} to {target}.",
+
+  "CPR-WA.aoe.dvHit": "<b>{attacker} <span class=\"fg-green\">hits the area</span></b> (DV: {dv} at {dist}m, {diff} over)! Roll Damage against targets in the blast!",
+  "CPR-WA.aoe.dvMiss": "<b>{attacker} <span class=\"fg-red\">misses the area</span></b> by {diff} (area DV: {dv} at {dist}m)!",
+
+  "CPR-WA.burning.mild": "Mild Burning",
+  "CPR-WA.burning.strong": "Strong Burning",
+  "CPR-WA.burning.deadly": "Deadly Burning",
+  "CPR-WA.burning.takes": "takes {amount} burn damage (ignoring armor)."
 }

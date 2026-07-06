@@ -1,0 +1,63 @@
+<div class="cpr-wa-loader">
+  <div class="cpr-wa-loader-header">
+    <div class="text-semi text-center">{{weaponName}}</div>
+    <div class="text-small text-center cpr-wa-loader-count">
+      {{filledCount}} / {{capacity}}
+    </div>
+    <div class="text-small text-center cpr-wa-loader-hint">{{L.dragHint}}</div>
+  </div>
+
+  <div class="cpr-wa-loader-body">
+    {{!-- The magazine, as a grid of slots. Index 0 is the top (fired first). --}}
+    <div class="cpr-wa-loader-column">
+      <div class="text-semi cpr-wa-loader-label">{{L.magazine}}</div>
+      <ol class="cpr-wa-slots">
+        {{#each slots as |slot|}}
+          <li class="cpr-wa-slot {{#if slot.filled}}filled{{else}}empty{{/if}}"
+              data-slot="{{slot.index}}">
+            <span class="cpr-wa-slot-index">{{cprInc slot.index}}</span>
+            {{#if slot.filled}}
+              <img class="cpr-wa-slot-img" src="{{slot.entry.img}}" alt="{{slot.entry.name}}"/>
+              <span class="cpr-wa-slot-name text-nowrap">{{slot.entry.name}}</span>
+              <span class="cpr-wa-slot-type text-small">{{slot.typeLabel}}</span>
+              <a class="cpr-wa-slot-clear" data-action="clearSlot" data-slot="{{slot.index}}">
+                <i class="fas fa-times"></i>
+              </a>
+            {{else}}
+              <span class="cpr-wa-slot-empty text-small">{{../L.empty}}</span>
+            {{/if}}
+          </li>
+        {{/each}}
+      </ol>
+    </div>
+
+    {{!-- Available ammo in the actor's inventory. --}}
+    <div class="cpr-wa-loader-column">
+      <div class="text-semi cpr-wa-loader-label">{{L.inventory}}</div>
+      <ol class="cpr-wa-inventory">
+        {{#each inventory as |ammo|}}
+          <li class="cpr-wa-inv-item {{#if ammo.depleted}}depleted{{/if}}" data-ammo-id="{{ammo.id}}">
+            <img class="cpr-wa-inv-img" src="{{ammo.img}}" alt="{{ammo.name}}"/>
+            <span class="cpr-wa-inv-name text-nowrap">{{ammo.name}}</span>
+            <span class="cpr-wa-inv-type text-small">{{ammo.typeLabel}}</span>
+            <span class="cpr-wa-inv-amount text-pill">{{ammo.remaining}} / {{ammo.amount}}</span>
+          </li>
+        {{else}}
+          <li class="cpr-wa-inv-empty text-small">—</li>
+        {{/each}}
+      </ol>
+    </div>
+  </div>
+
+  <div class="cpr-wa-loader-footer">
+    <button type="button" data-action="autofill" class="cpr-wa-btn">
+      <i class="fas fa-fill-drip"></i> {{L.autofill}}
+    </button>
+    <button type="button" data-action="cancel" class="cpr-wa-btn">
+      <i class="fas fa-xmark"></i> {{L.cancel}}
+    </button>
+    <button type="button" data-action="confirm" class="cpr-wa-btn cpr-wa-btn-primary">
+      <i class="fas fa-check"></i> {{L.confirm}}
+    </button>
+  </div>
+</div>

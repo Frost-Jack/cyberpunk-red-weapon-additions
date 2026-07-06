@@ -1,0 +1,263 @@
+/* Cyberpunk RED - Weapon Additions
+ * Styling for the injected sheet rows, mixed-magazine loader, and chat extras.
+ * Reuses the system's neon-red-on-dark aesthetic. */
+
+/* --- Weapon settings section header on the item sheet --- */
+.cpr-wa-section-header .setting-name {
+  color: #e63946;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-top: 1px solid rgba(230, 57, 70, 0.5);
+  padding-top: 4px;
+}
+
+.cpr-wa-setting input,
+.cpr-wa-setting select {
+  min-width: 90px;
+}
+
+/* --- Burst toggle in the weapon fire-mode list --- */
+.cpr-wa-burst-li .fa-circle-dot {
+  color: #e63946;
+}
+
+/* When the Burst toggle is present there can be up to FOUR fire modes
+ * (Aim / Autofire / Suppressive / Burst). The system sizes .weapon-mode for
+ * three, so a fourth line overflows and overlaps. We tag the container on
+ * injection (.cpr-wa-has-burst) and let the list flow as a tight column with
+ * the rows no longer clipped, so all four sit cleanly. */
+.weapon-mode.cpr-wa-has-burst {
+  align-content: start;
+}
+.weapon-mode.cpr-wa-has-burst ul {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05em;
+  margin-top: 0.15em;
+}
+.weapon-mode.cpr-wa-has-burst li {
+  overflow: visible;
+  align-items: center;
+  font-size: 0.92em;
+}
+
+/* --- Mixed magazine status on the weapon row --- */
+/* The system's .weapon-ammo cell is a short fixed-height flex row, so we keep
+ * both pieces on one line with a clear horizontal gap rather than stacking
+ * (stacking would overflow the ~1.1rem row and bleed into the row below). */
+.cpr-wa-mag-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.cpr-wa-mag-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.cpr-wa-mag-next .fa-layer-group {
+  color: #e63946;
+}
+.cpr-wa-mag-count {
+  opacity: 0.8;
+  font-size: 0.85em;
+  padding-left: 8px;
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+}
+.cpr-wa-mag-empty {
+  opacity: 0.7;
+  font-style: italic;
+}
+
+/* --- Chat: draggable critical-injury chips (bare list under a dashed line) --- */
+.cpr-wa-injury-block {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed rgba(230, 57, 70, 0.4);
+}
+.cpr-wa-injury-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.cpr-wa-injury-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px 2px 2px;
+  border: 1px solid rgba(230, 57, 70, 0.5);
+  border-radius: 12px;
+  background: rgba(230, 57, 70, 0.08);
+  cursor: grab;
+}
+.cpr-wa-injury-chip:hover {
+  background: rgba(230, 57, 70, 0.2);
+}
+.cpr-wa-injury-chip-img {
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.cpr-wa-injury-chip-name {
+  font-size: 0.9em;
+}
+
+/* --- Chat: burning tick --- */
+.cpr-wa-burning-tick {
+  padding: 4px 6px;
+  border-left: 3px solid #ff7b00;
+}
+
+/* --- Chat: area DV result (diwako integration) ---
+ * The message reuses diwako's own `.cpr-block` + `.fg-red`/`.fg-green` classes,
+ * so no extra styling is needed here (diwako's CSS is loaded when active). */
+
+/* --- Magazine loader application --- */
+.cpr-wa-magazine-loader .window-content {
+  background: #16181d;
+  color: #e6e6e6;
+}
+.cpr-wa-loader-header {
+  margin-bottom: 8px;
+}
+.cpr-wa-loader-count {
+  color: #e63946;
+  font-weight: 600;
+}
+.cpr-wa-loader-hint {
+  opacity: 0.7;
+}
+.cpr-wa-loader-body {
+  display: flex;
+  gap: 12px;
+}
+.cpr-wa-loader-column {
+  flex: 1 1 50%;
+  min-width: 0;
+}
+.cpr-wa-loader-label {
+  color: #e63946;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8em;
+  margin-bottom: 4px;
+}
+
+.cpr-wa-slots,
+.cpr-wa-inventory {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.cpr-wa-slot {
+  position: relative;
+  display: grid;
+  /* index | img | name (flex) | type | clear — all on one row */
+  grid-template-columns: 20px 26px minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 4px;
+  margin-bottom: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+  min-height: 32px;
+  background: rgba(255, 255, 255, 0.03);
+}
+.cpr-wa-slot.filled {
+  border-color: rgba(230, 57, 70, 0.6);
+  cursor: grab;
+}
+.cpr-wa-slot.empty {
+  border-style: dashed;
+  opacity: 0.7;
+}
+.cpr-wa-slot-index {
+  text-align: center;
+  opacity: 0.6;
+  font-size: 0.8em;
+}
+.cpr-wa-slot-img {
+  width: 24px;
+  height: 24px;
+  border: none;
+  object-fit: cover;
+}
+.cpr-wa-slot-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cpr-wa-slot-type {
+  opacity: 0.7;
+}
+.cpr-wa-slot-clear {
+  color: #e63946;
+  cursor: pointer;
+  padding: 0 4px;
+}
+.cpr-wa-slot-empty {
+  grid-column: 2 / -1;
+  opacity: 0.5;
+}
+.cpr-wa-slot-clear:hover {
+  color: #ff6b78;
+}
+
+.cpr-wa-inv-item {
+  display: grid;
+  grid-template-columns: 26px 1fr auto auto;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 4px;
+  margin-bottom: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+  cursor: grab;
+}
+.cpr-wa-inv-img {
+  width: 24px;
+  height: 24px;
+  border: none;
+  object-fit: cover;
+}
+.cpr-wa-inv-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cpr-wa-inv-type {
+  opacity: 0.7;
+}
+.cpr-wa-inv-amount {
+  font-size: 0.8em;
+}
+.cpr-wa-inv-item.depleted {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.cpr-wa-loader-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 10px;
+}
+.cpr-wa-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e6e6e6;
+  padding: 4px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.cpr-wa-btn:hover {
+  border-color: #e63946;
+}
+.cpr-wa-btn-primary {
+  background: rgba(230, 57, 70, 0.25);
+  border-color: #e63946;
+}
